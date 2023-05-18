@@ -35,14 +35,15 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
+          'postcss-loader',
           // {
-          //   loader: 'css-loader',
+          //   loader: 'postcss-loader',
           //   options: {
-          //     importLoaders: 2
+          //     postcssOptions: {
+          //       plugins: ['postcss-preset-env']
+          //     }
           //   }
           // },
-          'sass-loader',
-          'postcss-loader'
         ]
       },
 
@@ -86,7 +87,11 @@ module.exports = {
         minifyCSS: true// 压缩内联css
       },
       options: {
-        url: 'src/asstes'
+        url: 'src/asstes',
+        "browserslist": [
+          "> 1%",
+          "last 2 versions"
+        ],
       }
     }),
 
@@ -103,6 +108,7 @@ module.exports = {
       }
     })
   ],
+
   devServer: {
     // static: path.join(__dirname, 'dist'),
     compress: true,

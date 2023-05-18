@@ -1,0 +1,6 @@
+.test {
+    width: 100px;
+    height: 100px;
+    transform: rotate(-45deg);
+    border: 1px solid red;
+}
