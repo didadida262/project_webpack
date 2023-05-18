@@ -104,10 +104,11 @@ module.exports = {
     })
   ],
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    // static: path.join(__dirname, 'dist'),
     compress: true,
     port: 9528,
-    allowedHosts: 'all'
+    allowedHosts: 'all',
+    open: true
   }
 
 }
