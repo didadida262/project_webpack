@@ -27,6 +27,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.md$/,
+        use: './md-loader.js'
+      },
+
+      {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
@@ -46,7 +51,6 @@ module.exports = {
           // },
         ]
       },
-
       {
         test: /\.(png|jpg|svg|gif|webp|JPG|jpe)$/,
         type: 'assets',

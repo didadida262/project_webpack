@@ -75,6 +75,7 @@
     "html-webpack-plugin": "^5.5.1",
     "husky": "^8.0.0",
     "less-loader": "^4.1.0",
+    "marked": "^5.0.2",
     "mddir": "^1.1.1",
     "mini-css-extract-plugin": "^2.7.5",
     "mockjs": "1.0.1-beta3",
