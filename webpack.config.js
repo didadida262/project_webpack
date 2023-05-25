@@ -3,6 +3,26 @@
  * @Date: 2022-02-20 15:26:48
  * @LastEditors: Hhvcg
  */
+// const {MyPlugin} = require('./MyPlugin.ts')
+class MyPlugin {
+  apply(compile) {
+      console.log('my plugins 启动！！！')
+      compile.hooks.emit.tap('My plugin', (context) => {
+          for (let name in context.assets) {
+              console.log(context.assets[name].source())
+              if (name === 'bundle.js') {
+                const origin = context.assets[name].source()
+                const text = '===========================My Plugin Tag' + origin
+                // const test = 'dadadad'
+                context.assets[name] = {
+                  source: () => text,
+                  size: () => text.length
+                }
+              }
+          }
+      })
+  }
+}
 const chalk = require('chalk')
 const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
@@ -76,6 +96,8 @@ module.exports = {
     }
   },
   plugins: [
+    new MyPlugin(),
+    // new HtmlWebpackPlugin(),
     // new HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
     new CleanWebpackPlugin(),
@@ -83,6 +105,7 @@ module.exports = {
       filename: 'css/[name]_[contenthash:8].css'
     }),
     new HtmlWebpackPlugin({
+      title: '我是你asdasdasd爹！！',
       template: path.resolve('public/index.html'),
       inject: 'body',
       minify: {
@@ -91,6 +114,7 @@ module.exports = {
         minifyCSS: true// 压缩内联css
       },
       options: {
+        title: '我是你爹！！',
         url: 'src/asstes',
         "browserslist": [
           "> 1%",
