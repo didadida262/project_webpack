@@ -49,7 +49,6 @@ module.exports = {
       {
         test: /\.md$/,
         use: './md-loader.js'
-
       },
 
       {
@@ -137,7 +136,7 @@ module.exports = {
       }
     })
   ],
-
+  // devtool: 'source-map',
   devServer: {
     // static: path.join(__dirname, 'dist'),
     compress: true,
