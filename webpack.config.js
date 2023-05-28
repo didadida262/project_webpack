@@ -49,6 +49,7 @@ module.exports = {
       {
         test: /\.md$/,
         use: './md-loader.js'
+
       },
 
       {
@@ -96,7 +97,7 @@ module.exports = {
     }
   },
   plugins: [
-    new MyPlugin(),
+    // new MyPlugin(),
     // new HtmlWebpackPlugin(),
     // new HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
