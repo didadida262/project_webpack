@@ -38,6 +38,11 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 module.exports = {
   // entry: './src/main.js',
   mode: 'development',
+  // treeshaking配置
+  optimization: {
+    useExports: true,
+    minimize: true
+  },
   // entry: path.join(__dirname, './public/index.html'),
   entry: path.join(__dirname, './src/main.js'),
   output: {
@@ -72,16 +77,17 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|svg|gif|webp|JPG|jpe)$/,
-        type: 'assets',
-        parser: {
-          dataUrlCondition: {
-            maxSize: 20 * 1024
-          }
-        },
-        generator: {
-          filename: 'assets/[hash:8].[name][ext]'
-        }
+        test: /\.(png|jpg|svg|gif|webp|JPG|jpeg)$/,
+        use: ['file-loader']
+        // type: 'assets',
+        // parser: {
+        //   dataUrlCondition: {
+        //     maxSize: 20 * 1024
+        //   }
+        // },
+        // generator: {
+        //   filename: 'assets/[hash:8].[name][ext]'
+        // }
       }
     ]
   },
@@ -96,6 +102,7 @@ module.exports = {
     }
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin,
     // new MyPlugin(),
     // new HtmlWebpackPlugin(),
     // new HotModuleReplacementPlugin(),
@@ -138,11 +145,12 @@ module.exports = {
   ],
   // devtool: 'source-map',
   devServer: {
-    // static: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, 'dist'),
     compress: true,
     port: 9528,
     allowedHosts: 'all',
-    open: true
+    open: true,
+    hot: true
   }
 
 }

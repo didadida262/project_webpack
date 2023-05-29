@@ -3,4 +3,6 @@
     height: 100px;
     transform: rotate(-45deg);
     border: 1px solid red;
+    font-weight: bold;
+    /* background-image: url('https://cms-assets.tutsplus.com/uploads/users/1251/posts/26530/image/BenderPaper.jpg'); */
 }

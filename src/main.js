@@ -1,3 +1,7 @@
 import './index.css'
 import html from'./markdown.md'
-console.log2('>>>>>>>>>>>>>>>>>aloha!!', html)
+import im from './back-image.jpg'
+
+const img = new Image()
+img.src = im
+document.body.append(img)
