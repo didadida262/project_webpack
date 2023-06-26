@@ -23,5 +23,19 @@
     </div>
     <!-- built files will be auto injected -->
     <script src="./main.js" type="module"></script>
+    <script>
+      let timer = null
+      const getUserInfo = (time) => {
+        if (timer) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+          console.log('请求返回>>>', time)
+        }, time)
+      }
+      getUserInfo(1000)
+      getUserInfo(3000)
+      getUserInfo(4000)
+    </script>
   </body>
 </html>

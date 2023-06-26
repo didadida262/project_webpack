@@ -40,7 +40,7 @@ module.exports = {
   mode: 'development',
   // treeshaking配置
   optimization: {
-    useExports: true,
+    // useExports: true,
     minimize: true
   },
   // entry: path.join(__dirname, './public/index.html'),
@@ -112,7 +112,7 @@ module.exports = {
       filename: 'css/[name]_[contenthash:8].css'
     }),
     new HtmlWebpackPlugin({
-      title: '我是你asdasdasd爹！！',
+      title: '我是你asdasdasd爹!!',
       template: path.resolve('public/index.html'),
       inject: 'body',
       minify: {
