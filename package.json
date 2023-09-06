@@ -51,6 +51,10 @@
     "vuex": "3.1.0"
   },
   "devDependencies": {
+    "@babel/generator": "^7.22.15",
+    "@babel/parser": "^7.22.15",
+    "@babel/traverse": "^7.22.15",
+    "@babel/types": "^7.22.15",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@types/node": "^18.15.0",
@@ -68,6 +72,7 @@
     "compression-webpack-plugin": "^6.1.1",
     "connect": "3.6.6",
     "css-loader": "^6.7.3",
+    "ejs": "^3.1.9",
     "element-theme": "^2.0.1",
     "element-theme-chalk": "^2.15.10",
     "eslint": "6.7.2",
